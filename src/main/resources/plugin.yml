@@ -1,0 +1,89 @@
+# Required
+# The final name of your plugin, other plugins may use this name to declare dependency on your plugin
+name: CloneMe
+
+# Required
+# The name of your class file that overrides PluginBase
+main: org.powernukkit.plugins.example.CloneMePlugin
+
+# Required
+# The version of your plugin, it's recommended to follow the https://semver.org/ standard
+version: "1.0.0"
+
+# Required
+# The minimum Cloudburst Nukkit API version, it's not the PowerNukkit version!
+# Setting an outdated version usually don't cause issues so it's not a thing to worry too much 
+api: ["1.0.11"]
+
+# Optional
+# At which time your plugin will load.
+# Valid options are: POSTWORLD, STARTUP
+# Default value is POSTWORLD
+load: POSTWORLD
+
+# Optional
+# Your name or your organization name or how people identify you
+author: Nukkit Project
+
+# Optional
+# Explain in few words what this plugin does
+description: Example plugin showing the API
+
+# Optional
+# A link where the admins can find more info about your plugin
+website: https://github.com/Nukkit/ExamplePlugin
+
+# Optional
+# A list of plugins that are required to use this plugin
+# You should keep the PowerNukkit in the list if your plugin requires PowerNukkit features to work properly
+depend:
+ - PowerNukkit
+ 
+# Optional
+# A list of plugins that should be loaded before, if your plugin works fine with PowerNukkit, keep it in this list
+softdepend:
+ - PowerNukkit
+
+# Optional
+# Every sub-item must be a block, the key is the command name, you can create as many commands as you want
+# Make sure to keep the exact same alignment, it is important
+commands:
+  # The key is how the command will be used, like /cloneme . Avoid uppercase, the client game don't like it so much and may crash.
+  cloneme:
+    # Optional
+    # This information will be displayed in /help
+    description: Example command
+
+    # Optional
+    # This information will be displayed in /help and when your command executor returns false
+    usage: "/example"
+    
+    # Optional
+    # The permission required to use your command. It's a good practice to always define one even if the command can be used by everybody
+    # More information below
+    permission: cloneme.cmd.use
+    
+# Optional
+# Although you don't need to register your permissions here for them to work, it's good to allow the server owners to see all them quicker
+# This section also allows to customize their behavior and provide more information about them
+# You can also create group of permission
+# Also, every sub-item must be a block just like the commands block above
+permissions:
+  # The key must be the same value you use to define the permission
+  # It's a good practice to prefix it with your plugin name and create segmentation and then group them to make the permission management easier
+  cloneme.cmd.use:
+    # Optional
+    # This can be used by permission management plugins to show details about the permission key
+    description: "Allows the user to run the example command"
+    
+    # Optional
+    # If a player don't have an allow-deny definition for this key, this default value will be used
+    # Valid options: 
+    # - true: the permission is granted by default to everybody
+    # - false: the permission is revoked by default to everybody, including admins and OP
+    # - op: the permission is revoked by default to everybody, but is granted to OP players
+    # - notop: the permission is granted by default to everybody, but is revoked to OP players
+    # Default value is false
+    default: true
+    
+# TODO Add all possible configuration here
